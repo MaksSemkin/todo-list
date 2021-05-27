@@ -1,0 +1,73 @@
+.todo {
+  display: flex;
+  padding: 10px 15px;
+  background-color: orange ;
+  border-bottom: 1px solid #DDD;
+}
+
+.todo:nth-child(even) {
+  background-color: #eeeeee;
+}
+
+.todo:last-of-type {
+  border-bottom:  0;
+}
+
+.todo .id {
+  flex: 1 1 50px;
+}
+
+.todo .content {
+  flex: 1 1 100%
+}
+
+.todo.done .content {
+  text-decoration: line-through;
+}
+
+.todo-input {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  appearance: none;
+  border: none;
+  background-color: bisque;
+  margin-top: 15px;
+  font-size: 20px;
+  outline: none;
+}
+
+.todo-submit {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+
+  background-color: red;
+  color: #ffffff;
+  margin: 15px auto;
+
+  padding: 10px 15px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.btn {
+  display: inline-block;
+  background: #333333;
+  color: #fff;
+  padding: 0.4rem 1.3rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  transition: opacity 0.2s ease-in;
+  outline: none;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}

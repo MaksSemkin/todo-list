@@ -1,0 +1,78 @@
+<div class="todos">
+  <form (ngSubmit)="addTodo()" >
+    <input
+      [(ngModel)]=" inputTodoTitle  "
+      class="todo-input"
+      name="inputTodoTitle"
+      placeholder="Enter todoTitle..."
+      type="text"
+    >
+    <input
+      type="text"
+      name="inputTodo"
+      placeholder="Enter todoContent..."
+      class="todo-input"
+      [(ngModel)]="inputTodoContent"
+    >
+    <input
+      type="date"
+      name="inputTodoDate"
+      placeholder="Enter todoDate..."
+      class="todo-input"
+      [(ngModel)]="inputDate"
+    >
+
+    <input type="submit" value="Add Todo" class="todo-submit" >
+    <p>{{date|async|number: '0.0-0'}}</p>
+  </form>
+
+  <div  *ngFor="let todo of  todos; let i = index;" class="todo ">
+
+    <div class="id">{{i+1}}</div>
+
+    <div class="content"  (click)="conditionToggle(i)"  >{{todo.title}}</div>
+<div  class="content" (click)="conditionToggle(i)" *ngIf="!todo.condition">{{todo.content}}</div>
+<!--    <div class="btn" (click)="conditionToggle(i)" >{{todo.content}}</div>-->
+    <div class="content"  >{{todo.deadline}}</div>
+
+<!--    <div *ngIf="condition">-->
+<!--    <form (ngSubmit)="addTodo()">-->
+<!--      <input-->
+<!--        [(ngModel)]=" inputTodoTitleEdit  "-->
+<!--        class="todo-input"-->
+<!--        name="inputTodoTitleEdit"-->
+<!--        placeholder="Edit todoTitle..."-->
+<!--        type="text"-->
+<!--      >-->
+<!--      <input-->
+<!--        type="text"-->
+<!--        name="inputTodoContentEdit"-->
+<!--        placeholder="Edit todoContent..."-->
+<!--        class="todo-input"-->
+<!--        [(ngModel)]="inputTodoContentEdit"-->
+<!--      >-->
+<!--      <input-->
+<!--        type="date"-->
+<!--        name="inputTodoDateEdit"-->
+<!--        placeholder="Enter todoDate..."-->
+<!--        class="todo-input"-->
+<!--        [(ngModel)]="inputDateEdit"-->
+<!--      >-->
+
+<!--      <input type="submit" value="Add Todo" class="todo-submit" (click)="addTodo(i)">-->
+<!--    </form>-->
+<!--    </div>-->
+
+    <button class="btn" (click)="toggle(i)">Edit</button>
+
+    <button class="btn" (click)="deleteTodo(i)">Remove</button>
+    <button class="btn" (click)="upId(i)">Up</button>
+    <button class="btn" (click)="downId(i)"> Down</button>
+  </div>
+</div>
+
+
+
+<!--<div class="content" (click)="toggleDone(i)" >{{todo.title}}</div>-->
+
+<!--<div class="content" (click)="toggleDone(i)">{{todo.content}}</div>-->
